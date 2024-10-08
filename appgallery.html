@@ -4,55 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <style>
-        .title{
+        .title {
             margin-left: 3rem;
             text-align: center;
         }
-        .applet-flex-container{
+        .applet-flex-container {
             display: flex;
             justify-content: center;
             margin-left: 3rem;
         }
-        .applet-flex-container > div{
+        .applet-flex-container > div {
             margin-left: 1rem;
         }
+        /* Map styles */
+        #map {
+            height: 400px; /* Set height for the map */
+            width: 100%; /* Set width for the map */
+            margin-top: 1rem; /* Add some space above the map */
+        }
     </style>
-
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Applets
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="applet1.html">Applet 1</a></li>
+                            <li><a class="dropdown-item" href="Applet2.html">Applet 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
     <h1 class="title">APP GALLERY</h1>
 
     <div class="applet-flex-container">
-        <!--Ay di ara pinaka una na Applets-->
+        <!-- Applet 1 -->
         <div class="card" style="width: 20rem; border: 2px solid #19bfe9; border-radius: 5px;">
             <img src="https://img.freepik.com/free-vector/3d-style-black-background-with-paper-layer_206725-669.jpg?size=626&ext=jpg&ga=GA1.1.1819120589.1727740800&semt=ais_hybrid" class="card-img-top" alt="Description of Image" style="border-top-left-radius: 5px; border-top-right-radius: 5px;">
             <div class="card-body">
                 <h5 class="card-title">APPLET 1 - BASIC EVENTS</h5>
                 <p class="card-text">This application contains the basics of handling events in programming, allowing users to interact with simple actions like clicks or key presses.</p>
                 <a href="applet1.html" class="btn btn-primary text-center" style="display: block; width: 100%;">Go to Applet</a>
-           </div>
+            </div>
         </div>
 
-        <!--Ikaw duha nani na applets-->
+        <!-- Applet 2 -->
         <div class="card" style="width: 20rem; border: 2px solid #21098a; border-radius: 5px;">
             <img src="https://wallpapers.com/images/high/cyber-background-2wcmfxgeg4gnhx7n.webp" class="card-img-top" alt="Description of Image" style="border-top-left-radius: 5px; border-top-right-radius: 5px;">
             <div class="card-body">
                 <h5 class="card-title">APPLET 2 - LEAFLET MAP</h5>
                 <p class="card-text">This application allows users to create and explore interactive maps using simple tools for zooming, panning, and adding markers.</p>
-                <a href="#" class="btn btn-primary text-center" style="display: block; width: 100%;">Go to Applet</a>
-           </div>
+                <a href="Applet2.html" class="btn btn-primary text-center" style="display: block; width: 100%;">Go to Applet</a>
+            </div>
         </div>
 
-        <!--Pang ikatulo bai-->
+        <!-- Applet 3 -->
         <div class="card" style="width: 20rem; border: 2px solid #0099ff; border-radius: 5px;">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgqYKTUicZdlEqA1H_xtc8WX8GoWhYLqPD9Q&s" class="card-img-top" alt="Description of Image" style="border-top-left-radius: 5px; border-top-right-radius: 5px;">
             <div class="card-body">
                 <h5 class="card-title">APPLET 3 - EVENT BUTTON LOGGER</h5>
                 <p class="card-text">This application helps users display on what happens when they click buttons, showing a simple log of their actions.</p>
                 <a href="#" class="btn btn-primary text-center" style="display: block; width: 100%;">Go to Applet</a>
-           </div>
+            </div>
         </div>
     </div>
 </body>
