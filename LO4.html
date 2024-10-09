@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <title>LO - 4  Inheritance</title>
+</head>
+<body>
+    <h1>LO - 4  Inheritance</h1>
+    <h1 id="personOne"></h1>
+    <script>
+    class Person{
+
+        //Private Fields or i call it Parent class
+        #name;
+        #age;
+        #occupation;
+        #status;
+        #motto;
+        #goal;
+
+        
+       //building the class so we can use it again and again
+        constructor(name, age, occupation, status, motto, goal){
+            this.#name = name;
+            this.#age = age;
+            this.#occupation = occupation;
+            this.#status = status;
+            this.#motto = motto;
+            this.#goal = goal;
+        }
+
+
+        //Getters or stabilishing usability
+        get name(){
+            return this.#name;
+        }
+
+        get age(){
+            return this.#age;
+        }
+
+        get occupation(){
+            return this.#occupation;
+        }
+        get status(){
+            return this.#status;
+        }
+        get motto(){
+            return this.#motto;
+        }
+        get goal(){
+            return this.#goal;
+        }
+
+        // Displaying via Console
+        displayInfo() {
+            console.log("Name: " + this.name);
+            console.log("Age: " + this.age);
+            console.log("Occupation: " + this.occupation);
+            console.log("Status: " + this.status);
+            console.log("Motto: " + this.motto);
+            console.log("Goal: " + this.goal);
+        }
+
+        // Method to display person information in the HTML
+        displayInfoHTML() {
+            const personElement = document.getElementById('personOne');
+            personElement.innerHTML = `
+                <strong>Name:</strong> ${this.name}<br>
+                <strong>Age:</strong> ${this.age}<br>
+                <strong>Occupation:</strong> ${this.occupation}
+                <strong>Status:</strong> ${this.status}
+                <strong>MOtto:</strong> ${this.motto}
+                <strong>Goal:</strong> ${this.goal}
+            `;
+        }
+    }
+
+    class Student extends Person {
+        constructor(name, age, occupation, course) {
+            super(name, age, occupation);
+            this.course = course;
+        }
+
+        // Overriding the displayInfo method
+        displayInfo() {
+            super.displayInfo();
+            console.log("Course: " + this.course);
+        }
+
+        // Extending the displayInfoHTML method
+        displayInfoHTML() {
+            super.displayInfoHTML();
+            const personElement = document.getElementById('personOne');
+            personElement.innerHTML += `<br><strong>Course:</strong> ${this.course}`;
+        }
+        }
+
+        // Creating an instance of the Student class
+        const studentOne = new Student('Mark Lester G. Rasonabe', 19, 'Student', 'Bachelor in Science of Information Technology');
+
+        // Calling methods
+        studentOne.displayInfo();
+        studentOne.displayInfoHTML();
+    </script>
+</body>
+</html>
