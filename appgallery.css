@@ -1,0 +1,30 @@
+.title {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.applet-flex-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.gif-container {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.hover-gif {
+    width: 200px;
+    height: auto;
+}
+
+.applet-btn:hover {
+    background-color: #0056b3;
+    color: white;
+}
