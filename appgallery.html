@@ -7,33 +7,20 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    
+    <link rel="stylesheet" href="appgallery.css"> <!-- Link to your CSS file -->
     <style>
-        .title {
-            margin: 0 auto; /* Center the title */
-            text-align: center;
-            font-weight: bold; 
-            border: 2px solid white; 
-            padding: 10px; 
-            color: rgb(0, 0, 0); 
-            width: fit-content; /* Adjust width to fit content */
-        }
-        .applet-flex-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap; /* Ensures cards wrap properly on smaller screens */
-            margin-left: 3rem;
-        }
-        .applet-flex-container > div {
-            margin: 1rem;
-        }
-        #map {
-            height: 400px;
-            width: 100%;
-            margin-top: 1rem;
-        }
         body {
-            background-color: rgb(53, 128, 145);
+            background-color: rgb(125, 156, 223);
+        }
+        .gif-container {
+            position: absolute; /* Position absolute to move freely */
+            display: none; 
+            pointer-events: none;
+            z-index: 1000; 
+        }
+        .hover-gif {
+            max-width: 100px; 
+            max-height: 100px; 
         }
     </style>
 </head>
@@ -61,6 +48,7 @@
                         <a class="nav-link disabled" aria-disabled="true">Disabled</a>
                     </li>
                 </ul>
+                <h1 class="title">APP GALLERY</h1>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
@@ -68,44 +56,83 @@
             </div>
         </div>
     </nav>
-    <h1 class="title">APP GALLERY</h1>
-
+    
     <div class="applet-flex-container">
-        <div class="card" style="width: 20rem; border: 2px solid #19bfe9; border-radius: 5px;">
+        <div class="card" style="width: 15rem; border: 2px solid #19bfe9; border-radius: 5px;">
             <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTZlenUwOXpwd2NnaTA0cnMweXJwbTExajlzc3VtZzhhdDVzdzY4MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ky9RoXvwNldWjZ1DRk/giphy.webp" class="card-img-top" alt="Basic Events">
             <div class="card-body">
                 <h5 class="card-title">APPLET 1 - BASIC EVENTS</h5>
                 <p class="card-text">This application contains the basics of handling events in programming, allowing users to interact with simple actions like clicks or key presses.</p>
-                <a href="applet1.html" class="btn btn-primary text-center" style="display: block; width: 100%;">Go to Applet</a>
+                <a href="applet1.html" class="btn btn-primary text-center applet-btn" style="display: block; width: 100%;">Go to Applet</a>
             </div>
         </div>
 
-        <div class="card" style="width: 20rem; border: 2px solid #21098a; border-radius: 5px;">
+        <div class="card" style="width: 15rem; border: 2px solid #21098a; border-radius: 5px;">
             <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjN5YnV6ZmxoamZzeGFza295b3pka256a3NqMXkyd3htdmhvM2d6YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/M9slDmLbs2Aeus7GIj/giphy.webp" class="card-img-top" alt="Leaflet Map">
             <div class="card-body">
                 <h5 class="card-title">APPLET 2 - LEAFLET MAP</h5>
                 <p class="card-text">This application allows users to create and explore interactive maps using tools for zooming, panning, and adding markers.</p>
-                <a href="Applet2.html" class="btn btn-primary text-center" style="display: block; width: 100%;">Go to Applet</a>
+                <a href="Applet2.html" class="btn btn-primary text-center applet-btn" style="display: block; width: 100%;">Go to Applet</a>
             </div>
         </div>
 
-        <div class="card" style="width: 20rem; border: 2px solid #0099ff; border-radius: 5px;">
+        <div class="card" style="width: 15rem; border: 2px solid #0099ff; border-radius: 5px;">
             <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXRxcGo5bDAwN2ZkaWEwODh0ZHM3ZzgzNXg4OTN1ZnVsd3ZyZGZxZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/PvvSfSDFoAL5e/giphy.webp" class="card-img-top" alt="Event Logger">
             <div class="card-body">
                 <h5 class="card-title">APPLET 3 - EVENT BUTTON LOGGER</h5>
                 <p class="card-text">This application helps users log and display what happens when they click buttons, showing their actions in real-time.</p>
-                <a href="Applet3.html" class="btn btn-primary text-center" style="display: block; width: 100%;">Go to Applet</a>
+                <a href="Applet3.html" class="btn btn-primary text-center applet-btn" style="display: block; width: 100%;">Go to Applet</a>
             </div>
         </div>
 
-        <div class="card" style="width: 20rem; border: 2px solid #6c63ff; border-radius: 5px;">
+        <div class="card" style="width: 15rem; border: 2px solid #6c63ff; border-radius: 5px;">
             <img src="https://media2.giphy.com/media/I1gO1FsTvdfDG/200.webp?cid=790b7611llg4iohstxcwkv05frravsf9y9shipxjc8myqrkf&ep=v1_gifs_search&rid=200.webp&ct=g" class="card-img-top" alt="Student List">
             <div class="card-body">
-                <h5 class="card-title">APPLET 4 - SUPER CAR LIST</h5>
+                <h5 class="card-title">APPLET 4 - SEARCHING PROGRAMM</h5>
                 <p class="card-text">This application displays a searchable list of Super Cars , with interactive search functionality.</p>
-                <a href="Applet4.html" class="btn btn-primary text-center" style="display: block; width: 100%;">Go to Applet</a>
+                <a href="Applet4.html" class="btn btn-primary text-center applet-btn" style="display: block; width: 100%;">Go to Applet</a>
             </div>
         </div>
     </div>
+
+    <!-- GIF container -->
+    <div class="gif-container">
+        <img src="" alt="Applet GIF" class="hover-gif" />
+    </div>
+
+    <script>
+        const gifUrls = {
+            'applet1.html': 'https://i.giphy.com/3ohc0R5MH4pjQrTu3m.webp',
+            'Applet2.html': 'https://i.giphy.com/1Ir5ognfMO0xh5TAzT.webp',
+            'Applet3.html': 'https://i.giphy.com/gGrvdHRGj7ND6vkiRs.webp',
+            'Applet4.html': 'https://media3.giphy.com/media/B1WQaPA63si1c3eUjd/giphy.webp?cid=790b76113wdu8xuh6t99qcwzzouj491a5m4dexih4914msqa&ep=v1_gifs_search&rid=giphy.webp&ct=g'
+        };
+
+        document.querySelectorAll('.applet-btn').forEach(button => {
+            button.addEventListener('mouseover', function(event) {
+                const href = this.getAttribute('href');
+                const gifSrc = gifUrls[href];
+                document.querySelector('.hover-gif').src = gifSrc;
+                document.querySelector('.gif-container').style.display = 'block'; // Show GIF
+                
+        
+                const xOffset = 10;
+                const yOffset = 10; 
+                document.querySelector('.gif-container').style.left = `${event.pageX + xOffset}px`;
+                document.querySelector('.gif-container').style.top = `${event.pageY + yOffset}px`;
+            });
+
+            button.addEventListener('mousemove', function(event) {
+                const xOffset = 10; 
+                const yOffset = 10; 
+                document.querySelector('.gif-container').style.left = `${event.pageX + xOffset}px`;
+                document.querySelector('.gif-container').style.top = `${event.pageY + yOffset}px`;
+            });
+
+            button.addEventListener('mouseout', function() {
+                document.querySelector('.gif-container').style.display = 'none'; // Hide GIF
+            });
+        });
+    </script>
 </body>
 </html>
