@@ -28,3 +28,24 @@
     background-color: #0056b3;
     color: white;
 }
+.card-body {
+    min-height: 100px; 
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body {
+    flex-grow: 3; 
+}
+.card-img-top {
+    width: 236px; 
+    height: 180px; 
+    object-fit: cover; 
+}

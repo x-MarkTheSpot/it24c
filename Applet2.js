@@ -38,4 +38,4 @@ myMap.addMarker(8.3578, 124.8647, 'Dahilayan Forest Park');
 myMap.addMarker(8.3585, 124.8653, 'Zipline Launching Area');
 
 // Load markers from the JSON file
-myMap.loadMarkersFromJson('Applet2.json');
+myMap.loadMarkersFromJson('applet2.json');
