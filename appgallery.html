@@ -7,13 +7,18 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="appgallery.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="appgallery.css">
+  
     <style>
         body {
-            background-color: rgb(125, 156, 223);
+            background-image: url("https://media0.giphy.com/media/ehssta24116nk9VWyN/giphy.webp?cid=790b76119n47bx3kc9sqd6f92107moml4ttln6r8pj7le58z&ep=v1_gifs_search&rid=giphy.webp&ct=g")
+        }
+        .navbar {
+            border: 2px solid black; 
+            background-color: rgb(76, 75, 75);
         }
         .gif-container {
-            position: absolute; /* Position absolute to move freely */
+            position: absolute;
             display: none; 
             pointer-events: none;
             z-index: 1000; 
@@ -38,11 +43,12 @@
                             Applets
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="applet1.html">Applet 1</a></li>
+                            <li><a class="dropdown-item" href="Applet1.html">Applet 1</a></li>
                             <li><a class="dropdown-item" href="Applet2.html">Applet 2</a></li>
                             <li><a class="dropdown-item" href="Applet3.html">Applet 3</a></li>
                             <li><a class="dropdown-item" href="Applet4.html">Applet 4</a></li>
-                            <li><a class="dropdown-item" href="applet5.html">Applet 5</a></li>
+                            <li><a class="dropdown-item" href="Applet5.html">Applet 5</a></li>
+                            <li><a class="dropdown-item" href="Applet6.html">Applet 6</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -50,73 +56,84 @@
                     </li>
                 </ul>
                 <h1 class="title">APP GALLERY</h1>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <form class="d-flex" role="search" onsubmit="searchApplets(event)">
+                    <input id="search-input" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>
         </div>
     </nav>
+
+    <div class="applet-flex-container d-flex flex-wrap justify-content-center">
+        <div class="card" style="width: 15rem; border: 2px solid #ffffff; border-radius: 5px; display: flex; flex-direction: column;">
+            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTZlenUwOXpwd2NnaTA0cnMweXJwbTExajlzc3VtZzhhdDVzdzY4MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ky9RoXvwNldWjZ1DRk/giphy.webp" class="card-img-top" alt="Applet 1 GIF" style="width: 480px; height: 360px; object-fit: cover;">
+            <div class="card-body" style="flex-grow: 1;"> 
+                <h5 class="card-title">APPLET 1 - BASIC EVENTS</h5>
+                <p class="card-text">This application contains the basics of handling events in programming, allowing users to interact with simple actions like clicks or key presses.</p>
+            </div>
+            <a href="Applet1.html" class="btn btn-primary text-center applet-btn" style="width: 100%;">Go to Applet</a>
+        </div>
     
-<div class="applet-flex-container d-flex flex-wrap justify-content-center">
-    <div class="card" style="width: 15rem; border: 2px solid #19bfe9; border-radius: 5px;">
-        <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTZlenUwOXpwd2NnaTA0cnMweXJwbTExajlzc3VtZzhhdDVzdzY4MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ky9RoXvwNldWjZ1DRk/giphy.webp" class="card-img-top" alt="Basic Events">
-        <div class="card-body">
-            <h5 class="card-title">APPLET 1 - BASIC EVENTS</h5>
-            <p class="card-text">This application contains the basics of handling events in programming, allowing users to interact with simple actions like clicks or key presses.</p>
-            <a href="applet1.html" class="btn btn-primary text-center applet-btn" style="display: block; width: 100%;">Go to Applet</a>
+        <div class="card" style="width: 15rem; border: 2px solid #ffffff; border-radius: 5px; display: flex; flex-direction: column;">
+            <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjN5YnV6ZmxoamZzeGFza295b3pka256a3NqMXkyd3htdmhvM2d6YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/M9slDmLbs2Aeus7GIj/giphy.webp" class="card-img-top" alt="Applet 2 GIF" style="width: 480px; height: 360px; object-fit: cover;">
+            <div class="card-body" style="flex-grow: 1;"> 
+                <h5 class="card-title">APPLET 2 - LEAFLET MAP</h5>
+                <p class="card-text">This application allows users to create and explore interactive maps using tools for zooming, panning, and adding markers.</p>
+            </div>
+            <a href="Applet2.html" class="btn btn-primary text-center applet-btn" style="width: 100%;">Go to Applet</a>
+        </div>
+    
+        <div class="card" style="width: 15rem; border: 2px solid #ffffff; border-radius: 5px; display: flex; flex-direction: column;">
+            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXRxcGo5bDAwN2ZkaWEwODh0ZHM3ZzgzNXg4OTN1ZnVsd3ZyZGZxZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/PvvSfSDFoAL5e/giphy.webp" class="card-img-top" alt="Applet 3 GIF" style="width: 480px; height: 360px; object-fit: cover;">
+            <div class="card-body" style="flex-grow: 1;">
+                <h5 class="card-title">APPLET 3 - EVENT BUTTON LOGGER</h5>
+                <p class="card-text">This application displays events.</p>
+            </div>
+            <a href="Applet3.html" class="btn btn-primary text-center applet-btn" style="width: 100%;">Go to Applet</a>
+        </div>
+    
+        <div class="card" style="width: 15rem; border: 2px solid #ffffff; border-radius: 5px; display: flex; flex-direction: column;">
+            <img src="https://media2.giphy.com/media/I1gO1FsTvdfDG/200.webp?cid=790b7611llg4iohstxcwkv05frravsf9y9shipxjc8myqrkf&ep=v1_gifs_search&rid=200.webp&ct=g" class="card-img-top" alt="Applet 4 GIF" style="width: 480px; height: 360px; object-fit: cover;">
+            <div class="card-body" style="flex-grow: 1;"> 
+                <h5 class="card-title">APPLET 4 - SEARCHING PROGRAMM</h5>
+                <p class="card-text">This application displays a searchable list of Super Cars, with interactive search functionality.</p>
+            </div>
+            <a href="Applet4.html" class="btn btn-primary text-center applet-btn" style="width: 100%;">Go to Applet</a>
+        </div>
+    
+        <div class="card" style="width: 15rem; border: 2px solid #ffffff; border-radius: 5px; display: flex; flex-direction: column;">
+            <img src="https://media0.giphy.com/media/3o6gD0Gppxqoww0SQ4/giphy.webp" class="card-img-top" alt="Applet 5 GIF" style="width: 480px; height: 360px; object-fit: cover;">
+            <div class="card-body" style="flex-grow: 1;"> 
+                <h5 class="card-title">APPLET 5 - OPEN WEATHER</h5>
+                <p class="card-text">This application shows the Open weather status to the current Coordinates provided.</p>
+            </div>
+            <a href="Applet5.html" class="btn btn-primary text-center applet-btn" style="width: 100%;">Go to Applet</a>
+        </div>
+    
+        <div class="card" style="width: 15rem; border: 2px solid #ffffff; border-radius: 5px; display: flex; flex-direction: column;">
+            <img src="https://media2.giphy.com/media/3o6gD0Gppxqoww0SQ4/giphy.webp" class="card-img-top" alt="Applet 6 GIF" style="width: 480px; height: 360px; object-fit: cover;">
+            <div class="card-body" style="flex-grow: 1;"> 
+                <h5 class="card-title">APPLET 6 - TODO LIST</h5>
+                <p class="card-text">This application will manage and organize the inputted tasks.</p>
+            </div>
+            <a href="Applet6.html" class="btn btn-primary text-center applet-btn" style="width: 100%;">Go to Applet</a>
         </div>
     </div>
-
-    <div class="card" style="width: 15rem; border: 2px solid #21098a; border-radius: 5px;">
-        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjN5YnV6ZmxoamZzeGFza295b3pka256a3NqMXkyd3htdmhvM2d6YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/M9slDmLbs2Aeus7GIj/giphy.webp" class="card-img-top" alt="Leaflet Map">
-        <div class="card-body">
-            <h5 class="card-title">APPLET 2 - LEAFLET MAP</h5>
-            <p class="card-text">This application allows users to create and explore interactive maps using tools for zooming, panning, and adding markers.</p>
-            <a href="Applet2.html" class="btn btn-primary text-center applet-btn" style="display: block; width: 100%;">Go to Applet</a>
-        </div>
-    </div>
-
-    <div class="card" style="width: 15rem; border: 2px solid #0099ff; border-radius: 5px;">
-        <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXRxcGo5bDAwN2ZkaWEwODh0ZHM3ZzgzNXg4OTN1ZnVsd3ZyZGZxZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/PvvSfSDFoAL5e/giphy.webp" class="card-img-top" alt="Event Logger">
-        <div class="card-body">
-            <h5 class="card-title">APPLET 3 - EVENT BUTTON LOGGER</h5>
-            <p class="card-text">This application helps users log and display what happens when they click buttons, showing their actions in real-time.</p>
-            <a href="Applet3.html" class="btn btn-primary text-center applet-btn" style="display: block; width: 100%;">Go to Applet</a>
-        </div>
-    </div>
-
-    <div class="card" style="width: 15rem; border: 2px solid #6c63ff; border-radius: 5px;">
-        <img src="https://media2.giphy.com/media/I1gO1FsTvdfDG/200.webp?cid=790b7611llg4iohstxcwkv05frravsf9y9shipxjc8myqrkf&ep=v1_gifs_search&rid=200.webp&ct=g" class="card-img-top" alt="Student List">
-        <div class="card-body">
-            <h5 class="card-title">APPLET 4 - SEARCHING PROGRAMM</h5>
-            <p class="card-text">This application displays a searchable list of Super Cars, with interactive search functionality.</p>
-            <a href="Applet4.html" class="btn btn-primary text-center applet-btn" style="display: block; width: 100%;">Go to Applet</a>
-        </div>
-    </div>
-
-    <div class="card" style="width: 15rem; border: 2px solid #6c63ff; border-radius: 5px;">
-        <img src="https://i.giphy.com/Pp9W9tuVF5NwQ.webp" class="card-img-top" alt="OpenWeather">
-        <div class="card-body">
-            <h5 class="card-title">APPLET 5 - OPENWEATHER</h5>
-            <p class="card-text">This application shows the Open weather status to the current Coordinates provided.</p>
-            <a href="Applet5.html" class="btn btn-primary text-center applet-btn" style="display: block; width: 100%;">Go to Applet</a>
-        </div>
-    </div>
-</div>
-
+    
     <!-- GIF container -->
     <div class="gif-container">
         <img src="" alt="Applet GIF" class="hover-gif" />
+        <script src="appgallery.js"></script>
     </div>
 
     <script>
         const gifUrls = {
-            'applet1.html': 'https://i.giphy.com/3ohc0R5MH4pjQrTu3m.webp',
+            'Applet1.html': 'https://i.giphy.com/3ohc0R5MH4pjQrTu3m.webp',
             'Applet2.html': 'https://i.giphy.com/1Ir5ognfMO0xh5TAzT.webp',
             'Applet3.html': 'https://i.giphy.com/gGrvdHRGj7ND6vkiRs.webp',
             'Applet4.html': 'https://media3.giphy.com/media/B1WQaPA63si1c3eUjd/giphy.webp?cid=790b76113wdu8xuh6t99qcwzzouj491a5m4dexih4914msqa&ep=v1_gifs_search&rid=giphy.webp&ct=g',
-            'applet5.html': 'https://i.giphy.com/pdpKoXUc1wnkUXTsQI.webp',
+            'Applet5.html': 'https://media1.giphy.com/media/T9VKxJJvtw4Cc/200.webp?cid=790b7611bbk3ghsaj3m0xg40z52i2zwdbljgyzlp4ujwx9ja&ep=v1_gifs_search&rid=200.webp&ct=g',
+            'Applet6.html': 'https://media2.giphy.com/media/rkyY1h4MZxKM3wlEN8/giphy.webp?cid=790b7611wwn8qalz2e4cxmdqg785x8exdwp3zhqrdk1dz3w5&ep=v1_gifs_search&rid=giphy.webp&ct=g',
         };
 
         document.querySelectorAll('.applet-btn').forEach(button => {
@@ -124,9 +141,8 @@
                 const href = this.getAttribute('href');
                 const gifSrc = gifUrls[href];
                 document.querySelector('.hover-gif').src = gifSrc;
-                document.querySelector('.gif-container').style.display = 'block'; // Show GIF
-                
-        
+                document.querySelector('.gif-container').style.display = 'block';
+
                 const xOffset = 10;
                 const yOffset = 10; 
                 document.querySelector('.gif-container').style.left = `${event.pageX + xOffset}px`;
@@ -141,9 +157,26 @@
             });
 
             button.addEventListener('mouseout', function() {
-                document.querySelector('.gif-container').style.display = 'none'; // Hide GIF
+                document.querySelector('.gif-container').style.display = 'none';
             });
         });
+
+        function searchApplets(event) {
+            event.preventDefault();
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const appletCards = document.querySelectorAll('.card');
+            
+            appletCards.forEach(card => {
+                const title = card.querySelector('.card-title').textContent.toLowerCase();
+                const description = card.querySelector('.card-text').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
     </script>
 </body>
 </html>
